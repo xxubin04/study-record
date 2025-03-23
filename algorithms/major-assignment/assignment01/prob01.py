@@ -16,18 +16,3 @@ for num in map(int, input().split()):  # 숫자들을 입력받고 각각의 숫
         smaller_than_K.append(num)
 
 print(len(smaller_than_K)+1)  # 저장된 숫자들의 개수 + 1
-
-# TC 1
-# 10
-# 2 5 3 8 6 7 8 7 2 1
-# 8
-
-# TC 2
-# 25
-# 88 1 9 99 24 99 1 45 17 21 23 73 31 37 6 38 9 91 3 99 47 58 55 73 51
-# 50
-
-# TC 3
-# 8
-# 1 1 1 1 2 2 2 2
-# 2
