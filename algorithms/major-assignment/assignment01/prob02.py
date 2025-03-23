@@ -25,23 +25,8 @@ def nearest(start, end, near_nums, diff):
 
 
 global nums, near_nums  # 전역변수 선언
-N = int(input())
-nums = list(map(int, input().split()))
-K = int(input())
+N = int(input())  # N 입력
+nums = list(map(int, input().split()))  # nums 수열 입력
+K = int(input())  # K 입력
 
 print(nearest(0, N-1, [], float("inf")))
-
-# TC 1
-# 10
-# 1 2 3 4 5 6 7 8 9 10
-# 11
-
-# TC 2
-# 25
-# 1 3 6 9 13 17 21 23 24 31 37 38 44 45 47 51 55 58 71 73 88 91 99 101 102
-# 72
-
-# TC 3
-# 40
-# 1 17 19 23 25 28 41 44 49 50 61 64 65 67 71 77 79 81 82 83 84 90 91 92 96 99 101  103 109 121 128 132 133 150 152 161 165 167 177 178
-# 111
