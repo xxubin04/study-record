@@ -22,53 +22,11 @@ for i in range(len(lines)):
 comb = list(combinations(list(range(0, N)), k))
 max_ability = -999999999
 
-for c in comb:
-    ability_sum = 0
-    for a in c:
+for c in comb:  # 가능한 모둔 조합 탐색
+    ability_sum = 0  # 능력치는 0으로 초기화
+    for a in c:  # 조합에 속한 선수들의 능력치 계산
         for b in c:
             ability_sum += ability_list[a][b]
-    max_ability = max(max_ability, ability_sum)
+    max_ability = max(max_ability, ability_sum)  # 최대 능력치로 갱신
 
-print(max_ability)
-
-# TC 1
-# 4
-# 2 3 1 5
-# 1 4 -2 2
-# 0 -1 3 5
-# 2 4 2 1
-# 3
-
-# TC 2 -> 0
-# 4
-# 1 -4 -2 -5
-# 0 2 -3 -2
-# -2 -3 4 -2
-# -1 -3 -4 6
-# 3
-
-# TC 3
-# 8
-# 6 -2 8 -5 3 6 0 -2
-# 8 4 -12 8 3 6 -18 23
-# -8 7 2 16 4 -8 -2 7
-# 6 4 1 9 8 2 9 3
-# -2 8 3 6 4 -2 -8 6
-# 3 -2 4 7 2 8 9 12
-# 2 8 3 -6 4 -2 8 6
-# -4 3 2 9 4 6 9 8
-# 5
-
-# TC 4
-# 10
-# 2 -3 4 8 6 -2 9 -3 4 6
-# -9 2 3 4 2 4 -2 3 -9 7
-# 4 -2 7 3 4 7 -2 -9 3 -4
-# 7 2 9 3 8 7 4 8 9 2
-# 2 -3 -8 7 4 6 -2 8 7 4
-# -6 1 2 9 8 4 9 1 2 8
-# 4 7 9 -4 2 -3 9 4 7 2
-# 3 9 4 7 2 9 8 3 4 -7
-# 9 2 8 3 7 -4 9 2 3 7
-# 2 3 -8 9 4 9 8 2 7 3
-# 6
+print(max_ability)  # 팀의 최대 능력치 출력
