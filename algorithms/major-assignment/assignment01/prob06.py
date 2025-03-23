@@ -4,34 +4,17 @@
 
 
 def recursion(x):
-    if x == N-1:
-        return 'Yes'
+    if x == N-1:  # 마지막 원소에 도달하면
+        return 'Yes'  # 'Yes' 반환
 
-    for i in range(array[x]):
-        success = recursion(x+i+1)
-        if success == 'Yes':
-            return 'Yes'
+    for i in range(array[x]):  # 1 ~ array[x]만큼 이동가능하므로
+        success = recursion(x+i+1)  # recursion(x + (1 ~ array[x])) 호출
+        if success == 'Yes':  # 재귀 호출의 결과로 마지막 원소에 도달한다면
+            return 'Yes'  # 'Yes' 반환
 
-    return 'No'
+    return 'No'  # 마지막 원소에 도달하지 못한다면, 'No' 반환
 
-N = int(input())
-array = list(map(int, input().split()))
+N = int(input())  # N 입력
+array = list(map(int, input().split()))  # 길이가 N인 수열 입력
 
-print(recursion(0))
-
-
-# TC 1
-# 8
-# 2 3 1 0 2 0 1 3
-
-# TC 2
-# 14
-# 3 1 0 2 4 2 1 0 3 0 3 1 0 1
-
-# TC 3
-# 8
-# 2 4 3 2 1 0 4 3
-
-# TC 4
-# 5
-# 2 1 0 2 3
+print(recursion(0))  # 0번 인덱스부터 시작하여 재귀적 호출 
